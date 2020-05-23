@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { FaAlignRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-export default class Navbar extends Component {
+export default class Navbar extends Component{
   state = {
     isOpen: false
   };
@@ -24,10 +24,10 @@ export default class Navbar extends Component {
           </div>
             <ul className={this.state.isOpen?"nav-links show-nav":"nav-links"}>
               <li>
-                <Link to='/'>Home</Link>
+                <Link to='/'>Login</Link>
               </li>
               <li>
-                <Link to='/login'>Login</Link>
+                <Link to='/home'>home</Link>
               </li>
               <li>
                 <Link to='/scores'>Scores</Link>

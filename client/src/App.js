@@ -11,12 +11,11 @@ import Navbar from './Components/Navbar/Navbar'
 import './App.css';
 
 function App() {
-  return (
+  return (  
     <>
-      <Navbar />
       <Switch>
-        <Route exact path='/login' component={Landing} />
-        <Route exact path='/' component={Home} />
+        <Route exact path='/' component={Landing} />
+        <Route exact path='/home' component={Home} />
         <Route exact path='/scores' component={Scores} />
         <Route component={Error} />
       </Switch>

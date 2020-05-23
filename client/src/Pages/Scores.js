@@ -1,10 +1,14 @@
 import React from 'react'
+import Navbar from '../Components/Navbar/Navbar'
 
 const Scores = () => {
     return (
-        <div>
-            Scores page
-        </div>
+        <>
+            <Navbar />
+            <div>
+                Scores page
+            </div>
+        </>
     )
 }
 

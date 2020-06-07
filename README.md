@@ -21,6 +21,6 @@ featuring: react hooks, Context api, axios, react bootstrap, json web tokens, bc
  react-icons
  react-scripts
  
-  ### Current log:
+  ### Current log: https://trello.com/b/xA56zACi/bnw
   6/7/2020: Working backend with register and login routes using JWT and password encryption. working page layout, routing, database connection on frontend
   

@@ -5,9 +5,6 @@ import Landing from './Pages/Landing'
 import Home from './Pages/Home'
 import Scores from './Pages/Scores'
 import Error from './Pages/Error'
-
-import Navbar from './Components/Navbar/Navbar'
-
 import './App.css';
 
 function App() {

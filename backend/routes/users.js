@@ -1,7 +1,8 @@
-const router = require('express').Router();
+const router = require('express').Router()
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
-const User = require('../models/user.model');
+const auth = require('../middleware/auth')
+const User = require('../models/user.model')
 
 router.post('/register', async(req, res) => {
     try{
@@ -26,6 +27,7 @@ router.post('/register', async(req, res) => {
         const salt = await bcrypt.genSalt()
         const passwordHash = await bcrypt.hash(password, salt) //password encryption
 
+        //create and store user
         const newUser = new User({
             email,
             password: passwordHash,
@@ -40,6 +42,7 @@ router.post('/register', async(req, res) => {
     }
 })
 
+//login page router
 router.post('/login', async (req, res) =>{
    try {
        const{ email, password} = req.body
@@ -69,8 +72,36 @@ router.post('/login', async (req, res) =>{
         })
    
    } catch (error) {
-    res.status(500).json(err)
+    res.status(500).json(error)
    }
+})
+
+router.delete('/delete', auth, async(req, res) => {
+    try{
+        const deletedUser = await User.findByIdAndDelete(req.user)
+        res.json(deletedUser)
+    }catch (error) {
+        res.status(500).json(error)
+    }
+})
+
+router.post('/tokenIsValid', async(req, res) => {
+    try {
+        //token validaton checks
+        const token = req.header('x-auth-token')
+        if (!token) return res.json(false) //return if there is no token
+
+        const verified = jwt.verify(token, process.env.JWT_SECRET) //see middleware/auth for jwt.verify definition
+        if (!verified) return res.json(false) // return if token is not verified
+
+        const user = await User.findById(verified.id)
+        if (!user) return res.json(false) //return if the user the token repersents is not in the database
+
+        //if all checks pass, the token is valid and returns true
+        return res.json(true)
+    } catch (error) {
+        res.status(500).json(error)
+    }
 })
 
 module.exports = router

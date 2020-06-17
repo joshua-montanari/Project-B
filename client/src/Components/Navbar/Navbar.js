@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { FaAlignRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import AuthOptions from '../AuthOptions'
 
 export default class Navbar extends Component{
   state = {
@@ -24,15 +25,13 @@ export default class Navbar extends Component{
           </div>
             <ul className={this.state.isOpen?"nav-links show-nav":"nav-links"}>
               <li>
-                <Link to='/'>Login</Link>
-              </li>
-              <li>
-                <Link to='/home'>home</Link>
+                <Link to='/'>home</Link>
               </li>
               <li>
                 <Link to='/scores'>Scores</Link>
               </li>
             </ul>
+            <AuthOptions />
         </div>
       </nav>
     );

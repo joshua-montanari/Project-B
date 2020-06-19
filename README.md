@@ -31,4 +31,5 @@ featuring: react hooks, Context api, axios, react bootstrap, json web tokens, bc
   ![image](https://user-images.githubusercontent.com/50600343/84939972-297b5200-b0ad-11ea-9d70-a973a80080a2.png)
   
   6/19/2020: Added user context to manage logged in users, stored users in state and passed to context.provider, access jwt and logged in user from local storage, made sure password and email cannot be accessed from the dev console.
+  
   ![image](https://user-images.githubusercontent.com/50600343/85160732-bac50280-b22c-11ea-821a-25385e3194f1.png)

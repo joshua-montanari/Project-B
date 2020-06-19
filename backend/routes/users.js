@@ -104,4 +104,12 @@ router.post('/tokenIsValid', async(req, res) => {
     }
 })
 
+router.get('/', auth, async (req, res) => { //finds the user that is logged in
+    const user = await User.findById(req.user)
+    res.json({ //makes sure we dont display user email and password in the console
+        username: user.username,
+        id: user._id
+    })
+})
+
 module.exports = router

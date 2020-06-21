@@ -7,6 +7,7 @@ import Home from './Pages/Home'
 import Scores from './Pages/Scores'
 import Error from './Pages/Error'
 import Navbar from './Components/Navbar/Navbar'
+import Match from './Components/Match'
 import Axios from 'axios'
 
 import UserContext from './context/UserContext'
@@ -51,6 +52,7 @@ function App() {
           <Route exact path='/login' component={Login} />
           <Route exact path='/register' component={Register} />
           <Route exact path='/scores' component={Scores} />
+          <Route exact path='/match' component={Match} />
           <Route component={Error} />
         </Switch>
       </UserContext.Provider> 

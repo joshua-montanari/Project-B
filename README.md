@@ -36,4 +36,7 @@ featuring: react hooks, Context api, axios, react bootstrap, json web tokens, bc
   
   6/20/2020: Added login and register forms. Stores jwt in local storage, stores user in context, stores user in database. working logout button. 
  
-  6/21/2020: working on logic to save and display users matches
+  6/21/2020 am: working on logic to save and display users matches. 
+  
+  6/21/2020 pm; Woking total match display for all users. logic set up for match display for single users
+  ![image](https://user-images.githubusercontent.com/50600343/85241592-4cd63200-b40a-11ea-9eb2-f90179195049.png)

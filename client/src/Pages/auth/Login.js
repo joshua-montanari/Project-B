@@ -12,6 +12,8 @@ const Login = () => {
 
     const history = useHistory()
 
+    const register = () => history.push('/register')
+
     const submit = async (e) => {
         e.preventDefault() // prevents page reload, so state isnt lost
         const loginUser = {email, password}
@@ -40,6 +42,7 @@ const Login = () => {
                 
                 <input type='submit' value='Login' />
             </form>
+            <button onClick={register}>Need to make and account?</button>
         </div>
     )
 }

@@ -5,7 +5,6 @@ import Axios from 'axios'
 
 import SingleMatch from '../Components/SingleMatch'
 
-
 const Scores = () => {
 
     const [matchData, setMatchData] = useState([])

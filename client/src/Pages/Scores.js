@@ -11,7 +11,7 @@ const Scores = () => {
 
     const {userData} = useContext(UserContext)
 
-    const history = useHistory()
+    const {allUsers} = useContext(UserContext)
 
     useEffect( () => {
 
@@ -34,8 +34,13 @@ const Scores = () => {
     const userMatchData = matchData.map((match) => {   
     
         const singleMatchData = match.map((singleMatch) => {
-            console.log(singleMatch.matchScore)
-            return <SingleMatch winner={singleMatch.winnerID} loser={singleMatch.loserID} score={singleMatch.matchScore}/>
+            //console.log(singleMatch.matchScore)
+            if (singleMatch.winnerID == userData.user.id || singleMatch.loserID == userData.user.id) {
+                return <SingleMatch winner={singleMatch.winnerID} loser={singleMatch.loserID} score={singleMatch.matchScore}/>
+            }
+            else{
+                return
+            }
         })
         //console.log('match'+ JSON.stringify(match))
         //return  <SingleMatch winner={match.winnerID} loser={match.loserID} score={match.score}/>
@@ -47,6 +52,7 @@ const Scores = () => {
     return (
         <>
             <div>
+                <h1>{userData.user.username} recent matches</h1>
                 <ul>
                     {userMatchData}
                 </ul>

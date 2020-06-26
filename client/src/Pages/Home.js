@@ -11,6 +11,8 @@ const Home = () => {
 
     const {userData} = useContext(UserContext)
 
+    const {allUsers} = useContext(UserContext)
+
     const history = useHistory()
 
     const login = () => history.push('/login')

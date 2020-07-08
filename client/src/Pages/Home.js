@@ -8,11 +8,7 @@ import SingleMatch from '../Components/SingleMatch'
 const Home = () => {
 
     const [matchData, setMatchData] = useState([])
-
     const {userData} = useContext(UserContext)
-
-    const {allUsers} = useContext(UserContext)
-
     const history = useHistory()
 
     const login = () => history.push('/login')
@@ -21,8 +17,6 @@ const Home = () => {
 
                 const getUserMatchs = async () => {
                 const userRes = await Axios.get('http://localhost:5000/match/')
-                console.log('userRes.data'+JSON.stringify(userRes.data))
-    
                 const match = userRes.data
                  setMatchData(matchData => [...matchData, match])
             }
@@ -31,25 +25,20 @@ const Home = () => {
         
     }, [])
 
- 
-
-        const userMatchData = matchData.map((match) => {   
+        const userMatchData = matchData.map((match) => {
         
             const singleMatchData = match.map((singleMatch) => {
-                console.log(singleMatch.matchScore)
-                return <SingleMatch winner={singleMatch.winnerID} loser={singleMatch.loserID} score={singleMatch.matchScore}/>
+                return <SingleMatch winner={singleMatch.winnerName} loser={singleMatch.loserName} score={singleMatch.matchScore}/>
             })
-
             return singleMatchData
         })
-    
 
     return (
         <div>
             {userData.user ? (
                 <>
                     <div>
-                        <h1>All BNW Matchs</h1>
+                        <h1>All BNW Matches</h1>
                         <ul>
                             {userMatchData}
                         </ul>

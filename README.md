@@ -40,3 +40,5 @@ featuring: react hooks, Context api, axios, react bootstrap, json web tokens, bc
   
   6/21/2020 pm; Woking total match display for all users. logic set up for match display for single users
   ![image](https://user-images.githubusercontent.com/50600343/85241592-4cd63200-b40a-11ea-9eb2-f90179195049.png)
+  
+  6/25/2020: added login and register ui buttons, handled home page if user isnt logged in, directing them to login. Added all users into context. attempted to add filtering so that it only displays the active users' matches. however, it breaks on reset, will fix tomorrow.

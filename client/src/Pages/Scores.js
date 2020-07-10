@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from 'react'
-import { useHistory } from 'react-router-dom'
+import { useHistory, Link } from 'react-router-dom'
 import UserContext from '../context/UserContext'
 import Axios from 'axios'
 
@@ -12,6 +12,10 @@ const Scores = () => {
     const {userData, setUserData} = useContext(UserContext)
 
     const {allUsers} = useContext(UserContext)
+
+    const history = useHistory()
+    const login = () => history.push('/login')
+    const newMatch = () => history.push('/new-match')
 
     useEffect( () => {
 
@@ -45,14 +49,34 @@ const Scores = () => {
     })
 
     return (
-        <>
-            <div>
-                <h1>{userData.user.username} recent matches</h1>
-                <ul>
-                    {userMatchData}
-                </ul>
-            </div>
-        </>
+        // <>
+        //     <div>
+        //         <h1>{userData.user.username} recent matches</h1>
+        //         <ul>
+        //             {userMatchData}
+        //         </ul>
+        //     </div>
+        // </>
+
+        <div>
+            {userData.user ? (
+                <>
+                    <div>
+                        <h1>{userData.user.username}'s BNW Matches</h1>
+                        <button onClick={newMatch}>click here to submit a new match</button>
+                        <ul>
+                            {userMatchData}
+                        </ul>
+                    </div>
+                </>
+            ) : (
+                <>
+                    <h1>please log in to see matches</h1>
+                    <button onClick={login}>Click here to login</button>
+                </>
+            )}
+
+        </div>
     )
 }
 

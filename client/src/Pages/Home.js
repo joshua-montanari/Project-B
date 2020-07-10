@@ -28,7 +28,7 @@ const Home = () => {
         const userMatchData = matchData.map((match) => {
         
             const singleMatchData = match.map((singleMatch) => {
-                return <SingleMatch winner={singleMatch.winnerName} loser={singleMatch.loserName} score={singleMatch.matchScore}/>
+                return <SingleMatch winner={singleMatch.winnerName} loser={singleMatch.loserName} winScore={singleMatch.winnerScore} loseScore={singleMatch.loserScore}/>
             })
             return singleMatchData
         })

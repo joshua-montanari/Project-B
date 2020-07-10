@@ -10,17 +10,19 @@ router.route('/').get((req, res) => {
 router.route('/add').post((req, res) => {
     const winnerID = req.body.winnerID;
     const winnerName = req.body.winnerName;
+    const winnerScore = req.body.winnerScore
     const loserID = req.body.loserID;
     const loserName = req.body.loserName;
-    const matchScore = req.body.matchScore;
+    const loserScore = req.body.loserScore
     const date = Date.parse(req.body.date);
 
     const newMatch = new Match({
         winnerID,
         winnerName,
+        winnerScore,
         loserID,
         loserName,
-        matchScore,
+        loserScore, 
         date,
     });
 
@@ -46,9 +48,10 @@ router.route('/update/:id').post((req, res) => {
         .then(match => {
             match.winnerID = req.body.winnerID;
             match.winnerName = req.body.winnerName;
+            match.winnerScore = req.body.winnerScore;
             match.loserID = req.body.loserID;
             match.loserName = req.body.loserName;
-            match.matchScore = req.body.matchScore;
+            match.loserScore = req.body.loserScore;            match.matchScore = req.body.matchScore;
             match.date = Date.parse(req.body.date);
 
             match.save()

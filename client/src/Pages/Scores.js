@@ -34,7 +34,7 @@ const Scores = () => {
         const singleMatchData = match.map((singleMatch) => {
             //console.log(singleMatch.matchScore)
             if (singleMatch.winnerID === userData.user.id || singleMatch.loserID === userData.user.id) {
-                return <SingleMatch winner={singleMatch.winnerName} loser={singleMatch.loserName} score={singleMatch.matchScore}/>
+                return <SingleMatch winner={singleMatch.winnerName} loser={singleMatch.loserName} winScore={singleMatch.winnerScore} loseScore={singleMatch.loserScore}/>
             }
             else{
                 return

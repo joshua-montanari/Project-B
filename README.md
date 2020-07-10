@@ -42,3 +42,5 @@ featuring: react hooks, Context api, axios, react bootstrap, json web tokens, bc
   ![image](https://user-images.githubusercontent.com/50600343/85241592-4cd63200-b40a-11ea-9eb2-f90179195049.png)
   
   6/25/2020: added login and register ui buttons, handled home page if user isnt logged in, directing them to login. Added all users into context. attempted to add filtering so that it only displays the active users' matches. however, it breaks on reset, will fix tomorrow.
+  
+  7/08/20 / 7/10/20: Added username to match backend route. Also changed score from string to number in backend. (scores look like: '3-2'). This will allow for more data comparisons compared to just displaying the score.

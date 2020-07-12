@@ -37,7 +37,7 @@ const Scores = () => {
         //TODO: Error that causees userdata.user.id to be undefined after refresh
         const singleMatchData = match.map((singleMatch) => {
             //console.log(singleMatch.matchScore)
-            if (singleMatch.winnerID === userData.user.id || singleMatch.loserID === userData.user.id) {
+            if (singleMatch.winnerID === localStorage.getItem('user-id') || singleMatch.loserID === localStorage.getItem('user-id')) {
                 return <SingleMatch winner={singleMatch.winnerName} loser={singleMatch.loserName} winScore={singleMatch.winnerScore} loseScore={singleMatch.loserScore}/>
             }
             else{
@@ -59,10 +59,10 @@ const Scores = () => {
         // </>
 
         <div>
-            {userData.user ? (
+            {localStorage.getItem('user-id') ? (
                 <>
                     <div>
-                        <h1>{userData.user.username}'s BNW Matches</h1>
+                        <h1>{localStorage.getItem('username')}'s BNW Matches</h1>
                         <button onClick={newMatch}>click here to submit a new match</button>
                         <ul>
                             {userMatchData}

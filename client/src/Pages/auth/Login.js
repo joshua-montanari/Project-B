@@ -26,6 +26,8 @@ const Login = () => {
         })
         //sets jwt in localstroage
         localStorage.setItem('auth-token', loginRes.data.token)
+        localStorage.setItem('user-id', loginRes.data.user.id)
+        localStorage.setItem('username', loginRes.data.user.username)
         //goes to the home page
         history.push('/')
     }

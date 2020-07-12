@@ -16,6 +16,8 @@ const AuthOptions = () => {
             user: undefined
         })
         localStorage.setItem('auth-token', '')
+        localStorage.setItem('user-id', '')
+        localStorage.setItem('username', '')
     }
 
     return (

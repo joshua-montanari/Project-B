@@ -22,7 +22,7 @@ const Scores = () => {
         //gets users matches and displays them accordingly
         const getUserMatches = async () => {
             const userRes = await Axios.get('http://localhost:5000/match/')
-            console.log('userRes.data'+JSON.stringify(userRes.data))
+            //console.log('userRes.data'+JSON.stringify(userRes.data))
 
             const match = userRes.data
              setMatchData(matchData => [...matchData, match])

@@ -21,7 +21,7 @@ function App() {
     user: undefined
   })
 
-  const [allUsers, setAllUsers] = useState([])
+  //const [allUsers, setAllUsers] = useState([])
 
   //checks if a user is already logged in from last session (checks if there  is a jwt in local storage, and if jwt i valid)
   useEffect( () => {
@@ -43,14 +43,16 @@ function App() {
 
     checkLogin()
 
-    //gets all users and stores in state, and context
-    const getAllUsers = async () => {
+    // //gets all users and stores in state, and context
+    // const getAllUsers = async () => {
 
-      const allUsersRes = await Axios.get('http://localhost:5000/users/all-users') //gets all users and stores in state, and context
-        setAllUsers(allUsersRes)
-    }
+    //   const allUsersRes = await Axios.get('http://localhost:5000/users/all-users') //gets all users and stores in state, and context
+    //   //change variable name?
+    //   const allUsernames = await allUsersRes.map(user => user.username)
+    //   setAllUsers(allUsersRes)
+    // }
 
-    getAllUsers()
+    // getAllUsers()
 
   }, [])
 
@@ -59,7 +61,7 @@ function App() {
   return (  
     <>
     {/* because of the context provider, register and login pages have access to the userData and setUserData funcitons  */}
-      <UserContext.Provider value={ {userData, setUserData, allUsers, setAllUsers} }> 
+      <UserContext.Provider value={ {userData, setUserData} }> 
         <Navbar />
         <Switch>
           <Route exact path='/' component={Home} />

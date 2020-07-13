@@ -71,8 +71,8 @@ const Scores = () => {
                 </>
             ) : (
                 <>
-                    <h1>please log in to see matches</h1>
-                    <button onClick={login}>Click here to login</button>
+                    <h1>no matches present</h1>
+                    {/* <button onClick={login}>Click here to login</button> */}
                 </>
             )}
 

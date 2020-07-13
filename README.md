@@ -47,3 +47,4 @@ featuring: react hooks, Context api, axios, react bootstrap, json web tokens, bc
   
   7/12/2020: Added user-id and username to local storage. FIXED issue on page refresh where context would become undefined. Added working match registration page
   ![image](https://user-images.githubusercontent.com/50600343/87267829-bfc94a80-c496-11ea-82ee-d62127dc1440.png)
+  7/13/2020: Added error checking to match registration

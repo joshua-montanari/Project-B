@@ -16,6 +16,15 @@ router.route('/add').post((req, res) => {
     const loserScore = req.body.loserScore
     const date = Date.parse(req.body.date);
 
+    //register match validation
+    if(!loserUsername || !loserID || !loserScore || !winnerScore || !date)
+        return res.status(400).json({msg: 'not all fields have been entered'})
+    if(!winnerID || !winnerName)
+        return res.status(400).json({msg: 'error getting logged in user'})
+    if(loserScore > winnerScore)
+        return res.status(400).json({msg: 'Logged in user must be the winner'})
+    if(loserScore === winnerScore)
+        return res.status(400).json({msg: 'there cannot be a tie'})
     const newMatch = new Match({
         winnerID,
         winnerName,

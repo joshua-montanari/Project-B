@@ -6,7 +6,8 @@ import Register from './Pages/auth/Register'
 import Home from './Pages/Home'
 import Scores from './Pages/Scores'
 import Error from './Pages/Error'
-import Navbar from './Components/Navbar/Navbar'
+//import Navbar from './Components/Navbar/Navbar'
+import BSNavbar from './Components/Navbar/BSNavbar'
 import RegMatch from './Pages/auth/RegMatch'
 import Axios from 'axios'
 
@@ -62,7 +63,8 @@ function App() {
     <>
     {/* because of the context provider, register and login pages have access to the userData and setUserData funcitons  */}
       <UserContext.Provider value={ {userData, setUserData} }> 
-        <Navbar />
+        <BSNavbar />
+        {/* <Navbar /> */}
         <Switch>
           <Route exact path='/' component={Home} />
           <Route exact path='/login' component={Login} />

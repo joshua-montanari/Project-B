@@ -36,3 +36,38 @@
     transform: rotate(360deg);
   }
 }
+
+.nav-logo{
+  height: 100%;
+  width: 100%;
+}
+
+.nav-logo-box{
+  width: 15vh;
+}
+
+.auth-options-box{
+  display: inline-block;
+  width: 30vh;
+}
+
+.float-left{
+  float: left;
+}
+
+.float-right{
+  float: right;
+}
+
+.auth-button{
+  color: white;
+  text-decoration: none;
+  background-color: #61dafb;
+  /* border-radius: 8px; */
+  transition-duration: 0.4s;
+  box-shadow: 0;
+}
+.auth-button:hover {
+  background-color: #4287f5; /* Green */
+  color: white;
+}

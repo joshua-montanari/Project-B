@@ -25,12 +25,14 @@ const AuthOptions = () => {
             {/* if user is logged in, then show logout button instead */}
             { userData.user ? (
             <>
-            <h3>Welcome: {userData.user.username}</h3>
-            <button onClick={logout}>Logout</button>
+            <div className='auth-options-box'>
+                <h5 className='float-left'>Welcome: {userData.user.username}</h5>
+                <button className='float-right auth-button' onClick={logout}>Logout</button>
+            </div>
             </> ): (
                 <>
-                    <button onClick={register}>Register</button>
-                    <button onClick={login}>Login</button>
+                    <button className='auth-button'onClick={register}>Register</button>
+                    <button className='auth-button'onClick={login}>Login</button>
                 </>
             )
             }

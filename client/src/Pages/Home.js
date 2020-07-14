@@ -28,14 +28,13 @@ const Home = () => {
         const userMatchData = matchData.map((match) => {
         
             const singleMatchData = match.map((singleMatch) => {
-                return <SingleMatch winner={singleMatch.winnerName} loser={singleMatch.loserName} winScore={singleMatch.winnerScore} loseScore={singleMatch.loserScore}/>
+                return <SingleMatch winner={singleMatch.winnerName} loser={singleMatch.loserName} winScore={singleMatch.winnerScore} loseScore={singleMatch.loserScore} date={singleMatch.date}/>
             })
             return singleMatchData
         })
 
     return (
         <div>
-            {userData.user ? (
                 <>
                     <div>
                         <h1>All BNW Matches</h1>
@@ -44,13 +43,6 @@ const Home = () => {
                         </ul>
                     </div>
                 </>
-            ) : (
-                <>
-                    <h1>please log in to see matches</h1>
-                    <button onClick={login}>Click here to login</button>
-                </>
-            )}
-            
         </div>
     )
 }

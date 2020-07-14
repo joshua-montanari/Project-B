@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useContext } from 'react'
 import { useHistory, Link } from 'react-router-dom'
-import UserContext from '../context/UserContext'
 import Axios from 'axios'
 
 import SingleMatch from '../Components/SingleMatch'
@@ -8,10 +7,6 @@ import SingleMatch from '../Components/SingleMatch'
 const Scores = () => {
 
     const [matchData, setMatchData] = useState([])
-
-    const {userData, setUserData} = useContext(UserContext)
-
-    const {allUsers} = useContext(UserContext)
 
     const history = useHistory()
     const login = () => history.push('/login')
@@ -22,42 +17,27 @@ const Scores = () => {
         //gets users matches and displays them accordingly
         const getUserMatches = async () => {
             const userRes = await Axios.get('http://localhost:5000/match/')
-            //console.log('userRes.data'+JSON.stringify(userRes.data))
 
             const match = userRes.data
              setMatchData(matchData => [...matchData, match])
         }
-
         getUserMatches()
-
     }, [])
 
     const userMatchData = matchData.map((match) => {   
-    
-        //TODO: Error that causees userdata.user.id to be undefined after refresh
         const singleMatchData = match.map((singleMatch) => {
-            //console.log(singleMatch.matchScore)
             if (singleMatch.winnerID === localStorage.getItem('user-id') || singleMatch.loserID === localStorage.getItem('user-id')) {
-                return <SingleMatch winner={singleMatch.winnerName} loser={singleMatch.loserName} winScore={singleMatch.winnerScore} loseScore={singleMatch.loserScore}/>
+                return <SingleMatch winner={singleMatch.winnerName} loser={singleMatch.loserName} winScore={singleMatch.winnerScore} loseScore={singleMatch.loserScore} date={singleMatch.date}/>
             }
             else{
                 return
             }
         })
-
         return singleMatchData
     })
 
     return (
-        // <>
-        //     <div>
-        //         <h1>{userData.user.username} recent matches</h1>
-        //         <ul>
-        //             {userMatchData}
-        //         </ul>
-        //     </div>
-        // </>
-
+   
         <div>
             {localStorage.getItem('user-id') ? (
                 <>
@@ -71,8 +51,8 @@ const Scores = () => {
                 </>
             ) : (
                 <>
-                    <h1>no matches present</h1>
-                    {/* <button onClick={login}>Click here to login</button> */}
+                    <h1>Please login to see your matches</h1>
+                    <button onClick={login}>Click here to login</button>
                 </>
             )}
 

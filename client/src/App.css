@@ -48,7 +48,7 @@
 
 .auth-options-box{
   display: inline-block;
-  width: 30vh;
+  width: 32.5vh;
 }
 
 .float-left{
@@ -63,7 +63,6 @@
   color: white;
   text-decoration: none;
   background-color: #61dafb;
-  /* border-radius: 8px; */
   transition-duration: 0.4s;
   box-shadow: 0;
 }

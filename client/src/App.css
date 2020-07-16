@@ -28,6 +28,10 @@
   color: #61dafb;
 }
 
+.gap{
+  margin-top: 2vh;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -37,6 +41,7 @@
   }
 }
 
+/* NAVIGATION  */
 .nav-logo{
   height: 100%;
   width: 100%;
@@ -50,7 +55,8 @@
   display: inline-block;
   width: 32.5vh;
 }
-
+/* 
+TODO: lol delete this */
 .float-left{
   float: left;
 }
@@ -70,3 +76,67 @@
   background-color: #4287f5; /* Green */
   color: white;
 }
+
+/* END  NAV */
+
+/* SINGLE MATCH DISPLAY */
+
+.match-date{
+
+}
+
+.single-match{
+  height: 100px;
+}
+
+.match-winner{
+  background-color: #58b872;
+ text-align: center;
+}
+
+.match-loser{
+  background-color: #b04a4a;
+ 
+}
+
+.winner-img{
+  float: left;
+}
+
+.winner-name{
+  text-align: center;
+  float: left;
+  margin-top: 20px;
+  font-size: 3em;
+  color: white;
+}
+
+.winner-score{
+  float: right;
+  font-size: 4em;
+  margin-top: 10px;
+  color: white;
+}
+
+.loser-img{
+  float: right;
+}
+
+.loser-score{
+  float: left;
+  font-size: 4em;
+  margin-top: 10px;
+  color: white;
+}
+
+.loser-name{
+  text-align: center;
+  float: right;
+  margin-top: 20px;
+  font-size: 3em;
+  color: white;
+}
+
+
+
+/* END OF SINGLE MATCH DISPLAY */

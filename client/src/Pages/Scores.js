@@ -27,7 +27,7 @@ const Scores = () => {
     const userMatchData = matchData.map((match) => {   
         const singleMatchData = match.map((singleMatch) => {
             if (singleMatch.winnerID === localStorage.getItem('user-id') || singleMatch.loserID === localStorage.getItem('user-id')) {
-                return <SingleMatch winner={singleMatch.winnerName} loser={singleMatch.loserName} winScore={singleMatch.winnerScore} loseScore={singleMatch.loserScore} date={singleMatch.date}/>
+                return <SingleMatch winnerIMG={singleMatch.winnerCharIMG} loserIMG={singleMatch.loserCharIMG} winner={singleMatch.winnerName} loser={singleMatch.loserName} winScore={singleMatch.winnerScore} loseScore={singleMatch.loserScore} date={singleMatch.date}/>
             }
             else{
                 return

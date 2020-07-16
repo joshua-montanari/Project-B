@@ -28,7 +28,7 @@ const Home = () => {
         const userMatchData = matchData.map((match) => {
         
             const singleMatchData = match.map((singleMatch) => {
-                return <SingleMatch winner={singleMatch.winnerName} loser={singleMatch.loserName} winScore={singleMatch.winnerScore} loseScore={singleMatch.loserScore} date={singleMatch.date}/>
+                return <SingleMatch winnerIMG={singleMatch.winnerCharIMG} loserIMG={singleMatch.loserCharIMG} winner={singleMatch.winnerName} loser={singleMatch.loserName} winScore={singleMatch.winnerScore} loseScore={singleMatch.loserScore} date={singleMatch.date}/>
             })
             return singleMatchData
         })
@@ -38,9 +38,9 @@ const Home = () => {
                 <>
                     <div>
                         <h1>All BNW Matches</h1>
-                        <ul>
+                        <div>
                             {userMatchData}
-                        </ul>
+                        </div>
                     </div>
                 </>
         </div>

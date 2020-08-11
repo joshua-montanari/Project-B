@@ -9,6 +9,7 @@ import Error from './Pages/Error'
 //import Navbar from './Components/Navbar/Navbar'
 import BSNavbar from './Components/Navbar/BSNavbar'
 import RegMatch from './Pages/auth/RegMatch'
+import MatchStats from './Pages/MatchStats'
 import Axios from 'axios'
 
 import UserContext from './context/UserContext'
@@ -71,6 +72,7 @@ function App() {
           <Route exact path='/register' component={Register} />
           <Route exact path='/scores' component={Scores} />
           <Route exact path='/new-match' component={RegMatch} />
+          <Route exact path='/match/:slug' children={MatchStats} />
           <Route component={Error} />
         </Switch>
       </UserContext.Provider> 

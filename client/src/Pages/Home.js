@@ -11,7 +11,7 @@ const Home = () => {
     const {userData} = useContext(UserContext)
     const history = useHistory()
 
-    const login = () => history.push('/login')
+    const statsPage = () => history.push('/login')
 
     useEffect( () => {
 
@@ -28,7 +28,7 @@ const Home = () => {
         const userMatchData = matchData.map((match) => {
         
             const singleMatchData = match.map((singleMatch) => {
-                return <SingleMatch winnerIMG={singleMatch.winnerCharIMG} loserIMG={singleMatch.loserCharIMG} winner={singleMatch.winnerName} loser={singleMatch.loserName} winScore={singleMatch.winnerScore} loseScore={singleMatch.loserScore} date={singleMatch.date}/>
+                return <SingleMatch matchID={singleMatch._id} winnerIMG={singleMatch.winnerCharIMG} loserIMG={singleMatch.loserCharIMG} winner={singleMatch.winnerName} loser={singleMatch.loserName} winScore={singleMatch.winnerScore} loseScore={singleMatch.loserScore} date={singleMatch.date}/>
             })
             return singleMatchData
         })

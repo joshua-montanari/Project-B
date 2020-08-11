@@ -3,6 +3,7 @@ import { useHistory, Link } from 'react-router-dom'
 import Axios from 'axios'
 
 import SingleMatch from '../Components/SingleMatch'
+import UserStats from '../Components/UserStats'
 
 const Scores = () => {
 
@@ -27,7 +28,7 @@ const Scores = () => {
     const userMatchData = matchData.map((match) => {   
         const singleMatchData = match.map((singleMatch) => {
             if (singleMatch.winnerID === localStorage.getItem('user-id') || singleMatch.loserID === localStorage.getItem('user-id')) {
-                return <SingleMatch winnerIMG={singleMatch.winnerCharIMG} loserIMG={singleMatch.loserCharIMG} winner={singleMatch.winnerName} loser={singleMatch.loserName} winScore={singleMatch.winnerScore} loseScore={singleMatch.loserScore} date={singleMatch.date}/>
+                return <SingleMatch matchID={singleMatch._id} winnerIMG={singleMatch.winnerCharIMG} loserIMG={singleMatch.loserCharIMG} winner={singleMatch.winnerName} loser={singleMatch.loserName} winScore={singleMatch.winnerScore} loseScore={singleMatch.loserScore} date={singleMatch.date}/>
             }
             else{
                 return
@@ -42,6 +43,7 @@ const Scores = () => {
             {localStorage.getItem('user-id') ? (
                 <>
                     <div>
+                        {/* <UserStats user={localStorage.getItem('user-id')}/> */}
                         <h1>{localStorage.getItem('username')}'s BNW Matches</h1>
                         <button onClick={newMatch}>click here to submit a new match</button>
                         <ul>

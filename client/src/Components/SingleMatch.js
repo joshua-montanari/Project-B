@@ -1,10 +1,21 @@
 import React from 'react'
+import { Link, useHistory } from 'react-router-dom'
 import * as ReactBootStrap from 'react-bootstrap'
 
+
+
 const SingleMatch = (props) => {
+    const slug = props.matchID
+    const history = useHistory()
+
+    // function sendToMatchPage(){
+    //     //<Link to={`/match/${slug}`} />
+    // }
+
+    const matchStatsPage = () => history.push(`/match/${slug}`)
     return (
     <>
-    <ReactBootStrap.Container>
+    <ReactBootStrap.Container onClick={matchStatsPage}>
         <ReactBootStrap.Row>
             <ReactBootStrap.Col className='text-center'><div className='match-date'><h6>{props.date}</h6></div></ReactBootStrap.Col>
         </ReactBootStrap.Row>

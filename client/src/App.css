@@ -87,6 +87,7 @@ TODO: lol delete this */
 
 .single-match{
   height: 100px;
+  cursor: pointer;
 }
 
 .match-winner{

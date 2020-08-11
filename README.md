@@ -50,3 +50,7 @@ featuring: react hooks, Context api, axios, react bootstrap, json web tokens, bc
   7/13/2020: Added error checking to match registration, Added react-bootstrap navbar, and some style
   7/16/2020: Added styling for match display(still needs media queries and display options)
   ![image](https://user-images.githubusercontent.com/50600343/87710789-3f476a00-c774-11ea-9480-abe0bdbfddae.png)
+  7/16/2020-8/01/2020: Been away from computer
+  8/11/2020: Added different pages based on the match id, so users can see more match specifics
+  ![image](https://user-images.githubusercontent.com/50600343/89937748-85f97a00-dbe3-11ea-94e5-71ba0366a25c.png)
+

@@ -72,7 +72,7 @@ function App() {
           <Route exact path='/register' component={Register} />
           <Route exact path='/scores' component={Scores} />
           <Route exact path='/new-match' component={RegMatch} />
-          <Route exact path='/match/:slug' children={MatchStats} />
+          <Route path='/match/:slug' component={MatchStats} />
           <Route component={Error} />
         </Switch>
       </UserContext.Provider> 

@@ -32,6 +32,8 @@ router.post('/register', async(req, res) => {
             email,
             password: passwordHash,
             username,
+            wins: 0,
+            losses: 0,
         })
 
         const savedUser = await newUser.save()
@@ -118,3 +120,12 @@ router.route('/all-users').get((req, res) =>{
     .then(users => res.json(users))
     .catch(err => res.status(400).json('Error: ' + err));
 })
+
+router.get('/win-loss', async (req, res) => {
+    const user = await User.findById(req.user)
+    res.json({
+        wins: user.wins,
+        losses: user.losses
+    })
+})
+

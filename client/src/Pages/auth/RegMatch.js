@@ -25,6 +25,10 @@ const RegMatch = () => {
     const [loserChar, setLoserChar] = useState()
     const [loserCharIMG, setLoserCharIMG] = useState()
 
+    //sets in the user schema, not the match schema 
+    const [winnerWinsins, setWinnersWins] = useState()
+    const [losersLosses, setLosersLosses] = useState()
+
     const characterInfo = [
         { name: 'Mario', img: 'https://user-images.githubusercontent.com/50600343/87451827-695f2780-c5ce-11ea-8bcf-0c916961af9f.png'},
         { name: 'Bowser', img: 'https://user-images.githubusercontent.com/50600343/87458087-6c124a80-c5d7-11ea-8ade-46b780f98992.png'},
@@ -72,6 +76,16 @@ const RegMatch = () => {
             setAllUsers(res.data)
         })
 
+        //gets the winners scores
+        Axios.get('http://localhost:5000/users/win-loss', '5edc6805d4f85f26bc79a367') //gets the wins and loses for the active user, so the match can register as a win/loss
+        .then(res => {
+            console.log(res.data)
+            //setWinnersWins(res.data.wins)
+        })
+
+        
+
+
     }, [])
 
 
@@ -112,7 +126,7 @@ const RegMatch = () => {
         for(var i=0; i<characterInfo.length;i++){
             if(characterInfo[i].name === loserChar){
                 activeLoserCharIMG = characterInfo[i].img
-                console.log('loserlink: '+activeLoserCharIMG)
+                //console.log('loserlink: '+activeLoserCharIMG)
                 setLoserCharIMG(activeLoserCharIMG)
             }
         }
@@ -155,7 +169,9 @@ const RegMatch = () => {
             loserScore, 
             date,
         }
-        console.log(newMatch)
+
+        
+        //console.log(newMatch)
         await Axios.post('http://localhost:5000/match/add', newMatch)
         history.push('/')
     }

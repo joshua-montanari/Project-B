@@ -26,7 +26,7 @@ const MatchStats = (props) => {
     
     return (
         <div>
-            This is the match stats page for match {slug}
+            This is the match stats page for match {slug} this is the winner {selectedMatch.winnerName}
         </div>
     )
 }
